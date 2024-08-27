@@ -14,9 +14,9 @@
         <button @mouseenter="enter('we4')" @mouseleave="leave('we4')" @mousedown="click('we4')" @mouseup="unclick('we4')" class="block piece" style="grid-area: 1/4/6/8">
             <p>
             Telegram:<br>
-            <a @click="copy1">+996 508 294 559<br></a>
+            <a target="blank" href="https://t.me/normalcorecore">+996 508 294 559<br></a>
             Email:<br>
-            <a @click="copy2">isakovwebdev@gmail.com<br></a>
+            <a target="_blank" href="mailto:isakovwebdev@gmail.com">isakovwebdev@gmail.com<br></a>
             </p>   
         </button>
         <button @mouseenter="enter('we8')" @mouseleave="leave('we8')" @mousedown="click('we8')" @mouseup="unclick('we8')" class="block piece we8" style="grid-area: 6/3/9/8"></button>
@@ -179,11 +179,6 @@ export default {
 
  a{
     text-decoration: underline;
- }
-
- a:hover{
-    color: blue;
-    cursor:copy;
  }
 
  p{

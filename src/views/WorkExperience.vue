@@ -25,7 +25,7 @@
 
      <button @mouseenter="enter('')" @mouseleave="leave('')" @mousedown="click('')" @mouseup="unclick('')" class="block piece" style="grid-area: 1/7/9/11">
         <p>
-            Worked 6 months as a lead<br>
+            Worked 6 months as a<br>
             backend developer at<br>
             startup company project:<br>
             <a href="https://github.com/TBCounter/TBCounter-backend" target="blank">TBCounter</a>
