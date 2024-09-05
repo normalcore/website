@@ -2,7 +2,7 @@
     <div id="app" class="container">
         <button @mouseenter="enter('we1')" @mouseleave="leave('we1')" @mousedown="click('we1')" @mouseup="unclick('we1')" class="block piece" style="grid-area: 1/6/7/1"></button>
         <button @mouseenter="enter('we1')" @mouseleave="leave('we1')" @mousedown="click('we1')" @mouseup="unclick('we1')" class="block piece" style="grid-area: 1/1/9/5">
-            <a @click="$router.push('/projects/game')">game</a>
+            <a @click="$router.push('/game')">game</a>
         </button>
 
         <button @mouseenter="enter('we2')" @click="$router.push('/')" @mouseleave="leave('we2')" @mousedown="click('we2')" @mouseup="unclick('we2')" class="block we2 piece" style="grid-area: 9/6/6/6"></button>

@@ -3,8 +3,7 @@ import Home from '../views/Home.vue'
 import WorkExperience from '../views/WorkExperience.vue'
 import TechStacks from '../views/TechStacks.vue'
 import Contact from '../views/Contact.vue'
-import MyProjects from '../views/MyProjects.vue'
-import Game from "@/views/Game.vue";
+import Resume from '../views/Resume.vue'
 
 const routes = [
     {
@@ -28,15 +27,10 @@ const routes = [
         component: Contact
     },
     {
-        path: '/myprojects',
+        path: '/Resume',
         name: 'My Projects',
-        component: MyProjects
+        component: Resume
     },
-    {
-        path: '/myprojects/game',
-        name: 'Game',
-        component: Game
-    }
 ]
 
 const router = createRouter({

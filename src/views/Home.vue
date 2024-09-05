@@ -27,8 +27,8 @@
      <button @mouseenter="enter('block4')" @click="$router.push('/contact')" @mouseleave="leave('block4')" @mousedown="click('block4')" @mouseup="unclick('block4')" class="block block4 piece" style="grid-area: 9/6/8/9"></button>
      <button @mouseenter="enter('block4')" @click="$router.push('/contact')" @mouseleave="leave('block4')" @mousedown="click('block4')" @mouseup="unclick('block4')" class="block block4 piece" style="grid-area: 9/6/6/8">Contact</button>
      
-     <button @mouseenter="enter('block5')" @click="$router.push('/myprojects')" @mouseleave="leave('block5')" @mousedown="click('block5')" @mouseup="unclick('block5')" class="block block5 piece" style="grid-area: 8/8/4/10"></button>
-     <button @mouseenter="enter('block5')" @click="$router.push('/myprojects')" @mouseleave="leave('block5')" @mousedown="click('block5')" @mouseup="unclick('block5')" class="block block5 piece" style="grid-area: 6/7/4/10">My Projects</button>
+     <button @mouseenter="enter('block5')" @click="downloadItem('Profile-4.pdf')" @mouseleave="leave('block5')" @mousedown="click('block5')" @mouseup="unclick('block5')" class="block block5 piece" style="grid-area: 8/8/4/10"></button>
+     <button @mouseenter="enter('block5')" @click="downloadItem('Profile-4.pdf')" @mouseleave="leave('block5')" @mousedown="click('block5')" @mouseup="unclick('block5')" class="block block5 piece" style="grid-area: 6/7/4/10">Resume</button>
      
      <button @mouseenter="enter('block6')" @mouseleave="leave('block6')" @mousedown="click('block6')" @mouseup="unclick('block6')" class="block block6 piece" style="grid-area: 9/10/5/11"></button>
      <button @mouseenter="enter('block6')" @mouseleave="leave('block6')" @mousedown="click('block6')" @mouseup="unclick('block6')" class="block block6 piece" style="grid-area: 9/9/8/11"></button>
@@ -126,6 +126,17 @@ export default {
                 btn[i].style.color = 'white';
                 btn[i].style.transition = 'backgroundColor, 0.2s';
             }
+        },
+        downloadItem(url) {
+            axios.get(url, { responseType: 'blob' })
+                .then(response => {
+                    const blob = new Blob([response.data], { type: 'application/pdf' })
+                    const link = document.createElement('a')
+                    link.href = URL.createObjectURL(blob)
+                    //link.download = label
+                    link.click()
+                    URL.revokeObjectURL(link.href)
+                }).catch(console.error)
         }
     }}
 </script>
